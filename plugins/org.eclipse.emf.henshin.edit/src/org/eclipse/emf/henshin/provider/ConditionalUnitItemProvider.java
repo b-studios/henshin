@@ -39,22 +39,19 @@ import org.eclipse.emf.henshin.model.HenshinPackage;
 import org.eclipse.emf.henshin.provider.trans.GenericReferenceContainerItemProvider;
 
 /**
- * This is the item provider adapter for a
- * {@link org.eclipse.emf.henshin.model.ConditionalUnit} object. 
+ * This is the item provider adapter for a {@link org.eclipse.emf.henshin.model.ConditionalUnit} object.
  * <!-- begin-user-doc --> 
  * <!-- end-user-doc -->
  * @generated
  */
-public class ConditionalUnitItemProvider extends UnitItemProvider implements
-		IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider,
-		IItemLabelProvider, IItemPropertySource, IItemColorProvider {
+public class ConditionalUnitItemProvider extends UnitItemProvider {
 	
 	protected GenericReferenceContainerItemProvider ifItemProvider;
 	protected GenericReferenceContainerItemProvider thenItemProvider;
 	protected GenericReferenceContainerItemProvider elseItemProvider;
 	
 	/**
-	 * This constructs an instance from a factory and a notifier. 
+	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc --> 
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -134,14 +131,14 @@ public class ConditionalUnitItemProvider extends UnitItemProvider implements
 	}
 	
 	/**
-	 * This returns ConditionalUnit.gif. 
+	 * This returns ConditionalUnit.gif.
 	 * <!-- begin-user-doc --> 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return getResourceLocator().getImage("full/obj16/ConditionalUnit.gif");
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ConditionalUnit"));
 	}
 	
 	/**
@@ -178,8 +175,8 @@ public class ConditionalUnitItemProvider extends UnitItemProvider implements
 	}
 	
 	/**
-	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s
-	 * describing the children that can be created under this object. 
+	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
+	 * that can be created under this object.
 	 * <!-- begin-user-doc --> 
 	 * <!-- end-user-doc -->
 	 * @generated

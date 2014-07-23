@@ -52,9 +52,7 @@ import org.eclipse.emf.henshin.provider.util.IconUtil;
  * <!-- end-user-doc -->
  * @generated
  */
-public class RuleItemProvider extends UnitItemProvider implements
-		IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider,
-		IItemLabelProvider, IItemPropertySource, IItemColorProvider {
+public class RuleItemProvider extends UnitItemProvider {
 	
 	// Lhs-Rhs mapping container:
 	protected GenericReferenceContainerItemProvider lrMappingContainer;
@@ -63,7 +61,7 @@ public class RuleItemProvider extends UnitItemProvider implements
 	protected GenericReferenceContainerItemProvider multiMappingContainer;
 	
 	/**
-	 * This constructs an instance from a factory and a notifier. 
+	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -82,7 +80,7 @@ public class RuleItemProvider extends UnitItemProvider implements
 	}
 	
 	/**
-	 * This returns the property descriptors for the adapted class. 
+	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -94,12 +92,13 @@ public class RuleItemProvider extends UnitItemProvider implements
 
 			addCheckDanglingPropertyDescriptor(object);
 			addInjectiveMatchingPropertyDescriptor(object);
+			addJavaImportsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 	
 	/**
-	 * This adds a property descriptor for the Check Dangling feature. 
+	 * This adds a property descriptor for the Check Dangling feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -121,7 +120,7 @@ public class RuleItemProvider extends UnitItemProvider implements
 	}
 	
 	/**
-	 * This adds a property descriptor for the Injective Matching feature. 
+	 * This adds a property descriptor for the Injective Matching feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -142,6 +141,28 @@ public class RuleItemProvider extends UnitItemProvider implements
 				 null));
 	}
 	
+	/**
+	 * This adds a property descriptor for the Java Imports feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addJavaImportsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Rule_javaImports_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Rule_javaImports_feature", "_UI_Rule_type"),
+				 HenshinPackage.Literals.RULE__JAVA_IMPORTS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
 	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
@@ -359,8 +380,7 @@ public class RuleItemProvider extends UnitItemProvider implements
 	}
 	
 	/**
-	 * This returns the label text for
-	 * {@link org.eclipse.emf.edit.command.CreateChildCommand}. 
+	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated

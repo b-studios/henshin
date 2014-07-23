@@ -29,13 +29,10 @@ import org.eclipse.emf.henshin.model.LoopUnit;
  * <!-- end-user-doc -->
  * @generated
  */
-public class LoopUnitItemProvider extends UnaryUnitItemProvider
-		implements IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource,
-		IItemColorProvider {
+public class LoopUnitItemProvider extends UnaryUnitItemProvider {
 	
 	/**
-	 * This constructs an instance from a factory and a notifier. 
+	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc --> 
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -45,7 +42,7 @@ public class LoopUnitItemProvider extends UnaryUnitItemProvider
 	}
 
 	/**
-	 * This returns the property descriptors for the adapted class. 
+	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -60,7 +57,7 @@ public class LoopUnitItemProvider extends UnaryUnitItemProvider
 	}
 
 	/**
-	 * Returns the image for loop units.
+	 * This returns LoopUnit.gif.
 	 * <!-- begin-user-doc --> 
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -96,8 +93,8 @@ public class LoopUnitItemProvider extends UnaryUnitItemProvider
 	}
 
 	/**
-	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s
-	 * describing the children that can be created under this object. 
+	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
+	 * that can be created under this object.
 	 * <!-- begin-user-doc --> 
 	 * <!-- end-user-doc -->
 	 * @generated

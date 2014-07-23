@@ -26,7 +26,6 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
 import javax.script.ScriptEngine;
-import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -109,7 +108,7 @@ public class EngineImpl implements Engine {
 	/**
 	 * Script engine used to compute Java expressions in attributes.
 	 */
-	protected final ScriptEngine scriptEngine;
+	protected final JsScriptEngine scriptEngine;
 
 	/**
 	 * Cached information lookup map for each rule.
@@ -154,21 +153,7 @@ public class EngineImpl implements Engine {
 		inverseMatchingOrder = DEFAULT_INVERSE_MATCHING_ORDER;
 		
 		// Initialize the script engine:
-		scriptEngine = new ScriptEngineManager().getEngineByName("JavaScript");
-		if (scriptEngine==null) {
-			System.err.println("Warning: cannot find JavaScript engine");
-		} else {
-			try {
-				scriptEngine.eval("importPackage(java.lang)");
-			} catch (ScriptException e1) {
-				try {
-					scriptEngine.eval("load(\"nashorn:mozilla_compat.js\");\n" +
-							"importPackage(java.lang)");
-				} catch (ScriptException e2) {
-					System.err.println("Warning: error importing java.lang package in JavaScript engine");
-				}
-			}
-		}
+		scriptEngine = JsScriptEngine.getJsEngine();
 		
 		// Rule listener for automatically clearing caches when rules are changed at run-time:
 		ruleListener = new RuleChangeListener();
@@ -863,7 +848,7 @@ public class EngineImpl implements Engine {
 						attribute.getType().getEAttributeType(),
 						attribute.getType().isMany());
 			} else {
-				value = evalAttributeExpression(attribute);	// casting done here automatically
+				value = evalAttributeExpression(attribute, rule);	// casting done here automatically
 			}			
 			changes.add(new AttributeChangeImpl(graph, object, attribute.getType(), value));
 		}
@@ -890,21 +875,19 @@ public class EngineImpl implements Engine {
 	 * @param attribute Attribute to be interpreted.
 	 * @return The value.
 	 */
-	public Object evalAttributeExpression(Attribute attribute) {
+	public Object evalAttributeExpression(Attribute attribute, Rule rule) {
 
 		// Is it a constant or null?
 		Object constant = attribute.getConstant();
-		if (constant!=null) {
+		if (constant != null || attribute.isNull()) {
 			return constant;
-		}
-		if (attribute.isNull()) {
-			return null;
 		}
 
 		// Try to evaluate the expression and cast it to the correct type:
 		try {
+			Object evalResult = scriptEngine.eval(attribute.getValue(), rule.getJavaImports());
 			return castValueToDataType(
-					scriptEngine.eval(attribute.getValue()), 
+					evalResult,
 					attribute.getType().getEAttributeType(),
 					attribute.getType().isMany());
 		} catch (ScriptException e) {

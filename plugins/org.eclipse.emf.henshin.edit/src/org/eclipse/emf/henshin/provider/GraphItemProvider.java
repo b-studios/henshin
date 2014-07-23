@@ -41,12 +41,10 @@ import org.eclipse.emf.henshin.model.Node;
  * <!-- end-user-doc -->
  * @generated
  */
-public class GraphItemProvider extends NamedElementItemProvider implements
-		IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider,
-		IItemLabelProvider, IItemPropertySource, IItemColorProvider {
+public class GraphItemProvider extends NamedElementItemProvider {
 	
 	/**
-	 * This constructs an instance from a factory and a notifier. 
+	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc --> 
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -56,7 +54,7 @@ public class GraphItemProvider extends NamedElementItemProvider implements
 	}
 	
 	/**
-	 * This returns the property descriptors for the adapted class. 
+	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc --> 
 	 * <!-- end-user-doc -->
 	 * @generated

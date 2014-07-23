@@ -28,18 +28,15 @@ import org.eclipse.emf.henshin.model.AttributeCondition;
 import org.eclipse.emf.henshin.model.HenshinPackage;
 
 /**
- * This is the item provider adapter for a
- * {@link org.eclipse.emf.henshin.model.AttributeCondition} object. 
+ * This is the item provider adapter for a {@link org.eclipse.emf.henshin.model.AttributeCondition} object.
  * <!-- begin-user-doc --> 
  * <!-- end-user-doc -->
  * @generated
  */
-public class AttributeConditionItemProvider extends NamedElementItemProvider implements
-		IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider,
-		IItemLabelProvider, IItemPropertySource, IItemColorProvider {
+public class AttributeConditionItemProvider extends NamedElementItemProvider {
 	
 	/**
-	 * This constructs an instance from a factory and a notifier. 
+	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc --> 
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -49,7 +46,7 @@ public class AttributeConditionItemProvider extends NamedElementItemProvider imp
 	}
 	
 	/**
-	 * This returns the property descriptors for the adapted class. 
+	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc --> 
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -65,7 +62,7 @@ public class AttributeConditionItemProvider extends NamedElementItemProvider imp
 	}
 	
 	/**
-	 * This adds a property descriptor for the Condition Text feature. 
+	 * This adds a property descriptor for the Condition Text feature.
 	 * <!-- begin-user-doc --> 
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -131,11 +128,10 @@ public class AttributeConditionItemProvider extends NamedElementItemProvider imp
 	}
 	
 	/**
-	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s
-	 * describing the children that can be created under this object. 
+	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
+	 * that can be created under this object.
 	 * <!-- begin-user-doc --> 
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override

@@ -24,17 +24,14 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.henshin.model.IndependentUnit;
 
 /**
- * This is the item provider adapter for a
- * {@link org.eclipse.emf.henshin.model.IndependentUnit} object. 
+ * This is the item provider adapter for a {@link org.eclipse.emf.henshin.model.IndependentUnit} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class IndependentUnitItemProvider extends MultiUnitItemProvider implements
-		IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider,
-		IItemLabelProvider, IItemPropertySource, IItemColorProvider {
+public class IndependentUnitItemProvider extends MultiUnitItemProvider {
 	/**
-	 * This constructs an instance from a factory and a notifier. 
+	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -44,7 +41,7 @@ public class IndependentUnitItemProvider extends MultiUnitItemProvider implement
 	}
 	
 	/**
-	 * This returns the property descriptors for the adapted class. 
+	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -95,8 +92,8 @@ public class IndependentUnitItemProvider extends MultiUnitItemProvider implement
 	}
 	
 	/**
-	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s
-	 * describing the children that can be created under this object. 
+	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
+	 * that can be created under this object.
 	 * <!-- begin-user-doc --> 
 	 * <!-- end-user-doc -->
 	 * @generated
